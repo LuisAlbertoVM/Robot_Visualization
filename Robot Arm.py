@@ -27,6 +27,10 @@ def run():
 def directKinematics(lengths, thetas):
     pass
 
+class ServoOrientarion(Enum):
+    horizontal = 1
+    vertical = 2
+
 class Point:
     def __init__(self, matrix):
         # Initialize the point
