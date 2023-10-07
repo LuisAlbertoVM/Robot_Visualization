@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from enum import Enum
 
 def run():
     length1  = 62
@@ -24,7 +25,7 @@ def run():
         directKinematics(lengths=lengths, thetas=thetas)
 
 def directKinematics(lengths, thetas):
-    print(thetas)
+    pass
 
 class Point:
     def __init__(self, matrix):
@@ -50,7 +51,6 @@ def xRotation(point, theta):
     result_matrix[3,2] = -matrix_a[3,1]*sin_theta + matrix_a[3,2]*cos_theta
 
     rotated_point = Point(result_matrix)
-
     return rotated_point
 
 
