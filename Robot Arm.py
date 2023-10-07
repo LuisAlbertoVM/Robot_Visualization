@@ -86,6 +86,23 @@ def rotation_y(point, theta):
 
     return Point(result_matrix)
 
+def rotation_z(point, theta):
+    cos_theta = np.cos(theta)
+    sin_theta = np.sin(theta)
+    matrix_a = point.matrix.copy()
+    result_matrix = matrix_a.copy()
+
+    result_matrix[0,0] =  matrix_a[0,0] * cos_theta + matrix_a[0,1] * sin_theta
+    result_matrix[0,1] = -matrix_a[0,0] * sin_theta + matrix_a[0,1] * cos_theta
+    result_matrix[1,0] =  matrix_a[1,0] * cos_theta + matrix_a[1,1] * sin_theta
+    result_matrix[1,1] = -matrix_a[1,0] * sin_theta + matrix_a[1,1] * cos_theta
+    result_matrix[2,0] =  matrix_a[2,0] * cos_theta + matrix_a[2,1] * sin_theta
+    result_matrix[2,1] = -matrix_a[2,0] * sin_theta + matrix_a[2,1] * cos_theta
+    result_matrix[3,0] =  matrix_a[3,0] * cos_theta + matrix_a[3,1] * sin_theta
+    result_matrix[3,1] = -matrix_a[3,0] * sin_theta + matrix_a[3,1] * cos_theta
+
+    return Point(result_matrix)
+
 def translation_z(point, z):
     result_matrix = np.copy(point.matrix)
     result_matrix[0, 3] = point.matrix[0, 3] + point.matrix[0, 2] * z
