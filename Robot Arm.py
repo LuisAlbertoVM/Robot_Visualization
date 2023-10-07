@@ -8,28 +8,43 @@ def run():
     length4  = 62
     length5  = 93
     length6  = 61
-    initialTheta = -90
-    finalTheta   =  90
+    initial_theta = -90
+    final_theta   =  90
+
+    lengths = [length1, length2, length3, length4, length5, length6]
+    for theta in range(initial_theta, final_theta):
+        theta1 = theta * numpy.pi / 180
+        theta2 = theta * numpy.pi / 180
+        theta3 = theta * numpy.pi / 180
+        theta4 = theta * numpy.pi / 180
+        theta5 = theta * numpy.pi / 180
+        theta6 = theta * numpy.pi / 180
+
+        thetas = [theta1, theta2, theta3, theta4, theta5, theta6]
+        directKinematics(lengths=lengths, thetas=thetas)
+
+def directKinematics(lengths, thetas):
+    print(thetas)
 
 def xRotation(point, theta):
-    cosTheta = numpy.cos(theta)
-    sinTheta = numpy.sin(theta)
-    matrixA = point.matrix
-    resultMatrix = matrixA
+    cos_theta = numpy.cos(theta)
+    sin_theta = numpy.sin(theta)
+    matrix_a = point.matrix
+    result_matrix = matrix_a
 
-    resultMatrix[0,1] =  matrixA[0,1]*cosTheta + matrixA[0,2]*sinTheta
-    resultMatrix[0,2] = -matrixA[0,1]*sinTheta + matrixA[0,2]*cosTheta
-    resultMatrix[1,1] =  matrixA[1,1]*cosTheta + matrixA[1,2]*sinTheta
-    resultMatrix[1,2] = -matrixA[1,1]*sinTheta + matrixA[1,2]*cosTheta
-    resultMatrix[2,1] =  matrixA[2,1]*cosTheta + matrixA[2,2]*sinTheta
-    resultMatrix[2,2] = -matrixA[2,1]*sinTheta + matrixA[2,2]*cosTheta
-    resultMatrix[3,1] =  matrixA[3,1]*cosTheta + matrixA[3,2]*sinTheta
-    resultMatrix[3,2] = -matrixA[3,1]*sinTheta + matrixA[3,2]*cosTheta
+    result_matrix[0,1] =  matrix_a[0,1]*cos_theta + matrix_a[0,2]*sin_theta
+    result_matrix[0,2] = -matrix_a[0,1]*sin_theta + matrix_a[0,2]*cos_theta
+    result_matrix[1,1] =  matrix_a[1,1]*cos_theta + matrix_a[1,2]*sin_theta
+    result_matrix[1,2] = -matrix_a[1,1]*sin_theta + matrix_a[1,2]*cos_theta
+    result_matrix[2,1] =  matrix_a[2,1]*cos_theta + matrix_a[2,2]*sin_theta
+    result_matrix[2,2] = -matrix_a[2,1]*sin_theta + matrix_a[2,2]*cos_theta
+    result_matrix[3,1] =  matrix_a[3,1]*cos_theta + matrix_a[3,2]*sin_theta
+    result_matrix[3,2] = -matrix_a[3,1]*sin_theta + matrix_a[3,2]*cos_theta
 
-    rotatedPoint.matrix = resultMatrix
-    rotatedPoint.x = resultMatrix(1,4)
-    rotatedPoint.y = resultMatrix(2,4)
-    rotatedPoint.z = resultMatrix(3,4)
+    rotated_point.matrix = result_matrix
+    rotated_point.x = result_matrix(1,4)
+    rotated_point.y = result_matrix(2,4)
+    rotated_point.z = result_matrix(3,4)
 
 
 if __name__ == '__main__':
