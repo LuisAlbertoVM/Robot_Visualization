@@ -9,8 +9,8 @@ def run():
     length4  = 62
     length5  = 93
     length6  = 61
-    initial_theta = -90
-    final_theta   =  90
+    initial_theta = -0
+    final_theta   =  1
 
     lengths = [length1, length2, length3, length4, length5, length6]
     for theta in range(initial_theta, final_theta):
@@ -25,7 +25,16 @@ def run():
         directKinematics(lengths=lengths, thetas=thetas)
 
 def directKinematics(lengths, thetas):
-    pass
+    length_1 = lengths[0]
+    initial_matrix_servo_1 = np.array([
+        [1, 0, 0, 0],
+        [0, 1, 0, 0],
+        [0, 0, 1, 0],
+        [0, 0, 0, 1]
+    ])
+    initital_point = Point(initial_matrix_servo_1)
+    final_position_servo_1 = translation_z(point=initital_point, z=length_1)
+    print(final_position_servo_1.matrix)
 
 class ServoOrientarion(Enum):
     horizontal = 1
@@ -61,6 +70,14 @@ def xRotation(point, theta):
     rotated_point = Point(result_matrix)
     return rotated_point
 
+def translation_z(point, z):
+    result_matrix = np.copy(point.matrix)
+    result_matrix[0, 3] = point.matrix[0, 3] + point.matrix[0, 2] * z
+    result_matrix[1, 3] = point.matrix[1, 3] + point.matrix[1, 2] * z
+    result_matrix[2, 3] = point.matrix[2, 3] + point.matrix[2, 2] * z
+    result_matrix[3, 3] = point.matrix[3, 3] + point.matrix[3, 2] * z
+    return Point(matrix=result_matrix)
+    
 
 if __name__ == '__main__':
     run()
