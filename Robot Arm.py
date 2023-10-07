@@ -31,6 +31,10 @@ class ServoOrientarion(Enum):
     horizontal = 1
     vertical = 2
 
+class ServoType(Enum):
+    RDSS51150 = 1
+    RDS3225 = 2
+
 class Point:
     def __init__(self, matrix):
         # Initialize the point
