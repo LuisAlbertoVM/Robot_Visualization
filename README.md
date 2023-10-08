@@ -16,12 +16,14 @@ $length_6  = 61$
 The initial point of the first servo is:  
 
 $$
+\[
 \begin{matrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{matrix}
+\]
 x 
 \begin{matrix}
 1 & 0 & 0 & 0 \\
