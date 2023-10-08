@@ -13,7 +13,7 @@ $length_4  = 62$
 $length_5  = 93$  
 $length_6  = 61$  
 
-Some formulas:
+The translations and rotations matrix:
 
 $$
 translation_x = 
@@ -45,27 +45,18 @@ translation_z =
 \end{bmatrix}
 $$
 
+$$
+rotation_x = 
+\begin{bmatrix}
+1 & 0 & 0 & 0 \\
+0 & cos(\theta) & -sin(\theta) & 0 \\
+0 & sin(\theta) & cos(\theta) & z \\
+0 & 0 & 0 & 1
+\end{bmatrix}
+$$
+
 The initial point of the first servo is:  
-
 $$
-\begin{bmatrix}
-1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
-\end{bmatrix}
-$$
-
-To calculate the final position of $servo_1$ we need to translate the matrix in z
-
-$$
-\begin{bmatrix}
-1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
-\end{bmatrix}
-x 
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
