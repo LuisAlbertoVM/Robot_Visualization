@@ -13,7 +13,7 @@ $length_4  = 62$
 $length_5  = 93$  
 $length_6  = 61$  
 
-The initial point of the first servo is:
+The initial point of the first servo is:  
 $$
 \begin{bmatrix}
 1 & 0 & 0 & x \\
