@@ -40,7 +40,7 @@ translation_z =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
-0 & 0 & 1 & z \\
+0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -55,7 +55,8 @@ rotation_x =
 \end{bmatrix}
 $$
 
-The initial point of the first servo is:  
+The initial point of the first servo is:
+
 $$
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
