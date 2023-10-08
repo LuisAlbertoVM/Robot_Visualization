@@ -9,8 +9,8 @@ def run():
     length4  = 62
     length5  = 93
     length6  = 61
-    initial_theta = -0
-    final_theta   =  1
+    initial_theta =  90
+    final_theta   =  91
 
     lengths = [length1, length2, length3, length4, length5, length6]
     for theta in range(initial_theta, final_theta):
@@ -26,15 +26,39 @@ def run():
 
 def directKinematics(lengths, thetas):
     length_1 = lengths[0]
+    length_2 = lengths[1]
+    length_3 = lengths[2]
+    length_4 = lengths[3]
+    length_5 = lengths[4]
+    length_6 = lengths[5]
+
+    theta_1 = thetas[0]
+    theta_2 = thetas[1]
+    theta_3 = thetas[2]
+    theta_4 = thetas[3]
+    theta_5 = thetas[4]
+    theta_6 = thetas[5]
+
     initial_matrix_servo_1 = np.array([
         [1, 0, 0, 0],
         [0, 1, 0, 0],
         [0, 0, 1, 0],
         [0, 0, 0, 1]
     ])
-    initital_point = Point(initial_matrix_servo_1)
-    final_position_servo_1 = translation_z(point=initital_point, z=length_1)
-    print(final_position_servo_1.matrix)
+    initital_position_servo_1 = Point(initial_matrix_servo_1)
+    final_position_servo_1    = translation_z(point=rotation_z(initital_position_servo_1,theta_1), z=length_1)
+    initital_position_servo_2 = final_position_servo_1
+    final_position_servo_2    = translation_z(point=rotation_y(initital_position_servo_2,theta_2), z=length_2)
+    initital_position_servo_3 = final_position_servo_2
+    final_position_servo_3    = translation_z(point=rotation_y(initital_position_servo_3,theta_3), z=length_3)
+    initital_position_servo_4 = final_position_servo_3
+    final_position_servo_4    = translation_z(point=rotation_z(initital_position_servo_4,theta_4), z=length_4)
+    initital_position_servo_5 = final_position_servo_4
+    final_position_servo_5    = translation_z(point=rotation_y(initital_position_servo_5,theta_5), z=length_5)
+    initital_position_servo_6 = final_position_servo_5
+    final_position_servo_6    = translation_z(point=rotation_z(initital_position_servo_6,theta_6), z=length_6)
+    print(theta_1)
+    print(final_position_servo_6.x, final_position_servo_6.y, final_position_servo_6.z)
 
 class ServoOrientarion(Enum):
     horizontal = 1
@@ -51,6 +75,16 @@ class Point:
         self.x = self.matrix[0][3]
         self.y = self.matrix[1][3]
         self.z = self.matrix[2][3]
+
+class Servo:
+    def __init__(self,initial_point,servo_type,servo_orientation):
+        self.initial_point = initial_point
+        self.servo_type = servo_type
+        self.servo_orientation = servo_orientation
+
+        
+        
+        pass
 
 def rotation_x(point, theta):
     cos_theta = np.cos(theta)
@@ -126,7 +160,6 @@ def translation_z(point, z):
     result_matrix[2, 3] = point.matrix[2, 3] + point.matrix[2, 2] * z
     result_matrix[3, 3] = point.matrix[3, 3] + point.matrix[3, 2] * z
     return Point(matrix=result_matrix)
-    
 
 if __name__ == '__main__':
     run()
