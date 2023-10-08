@@ -13,7 +13,7 @@ $length_4  = 62$
 $length_5  = 93$  
 $length_6  = 61$  
 
-The translations and rotations matrix:
+The translations and rotations matrix are:
 
 $$
 translation_x = 
@@ -40,7 +40,7 @@ translation_z =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
+0 & 0 & 1 & z \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
@@ -50,7 +50,7 @@ rotation_x =
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
 0 & cos(\theta) & -sin(\theta) & 0 \\
-0 & sin(\theta) & cos(\theta) & z \\
+0 & sin(\theta) & cos(\theta) & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
