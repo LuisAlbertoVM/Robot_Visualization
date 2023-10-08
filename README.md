@@ -23,4 +23,5 @@ $$
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
+
 To calculate the final position of servo_1 we need to translate the matrix in z
