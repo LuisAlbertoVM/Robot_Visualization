@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from mpl_toolkits.mplot3d import Axes3D
 from enum import Enum
 
 def run():
@@ -59,6 +60,8 @@ def directKinematics(lengths, thetas):
     final_position_servo_6    = translation_z(point=rotation_z(initital_position_servo_6,theta_6), z=length_6)
     print(theta_1)
     print(final_position_servo_6.x, final_position_servo_6.y, final_position_servo_6.z)
+
+
 
 class ServoOrientarion(Enum):
     horizontal = 1
@@ -160,6 +163,18 @@ def translation_z(point, z):
     result_matrix[2, 3] = point.matrix[2, 3] + point.matrix[2, 2] * z
     result_matrix[3, 3] = point.matrix[3, 3] + point.matrix[3, 2] * z
     return Point(matrix=result_matrix)
+
+def plot_3d_links_arm(x, y, z):
+    fig = plt.figure()
+    ax = fig.add_subplot(111, projection='3d')
+
+    ax.scatter(x, y, z, c='b', marker='o')
+    
+    ax.set_xlabel('X')
+    ax.set_ylabel('Y')
+    ax.set_zlabel('Z')
+
+    ax.scatter()
 
 if __name__ == '__main__':
     run()
