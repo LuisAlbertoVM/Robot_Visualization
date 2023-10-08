@@ -1,6 +1,6 @@
+import time
 import numpy as np
 import matplotlib.pyplot as plt
-import time
 from mpl_toolkits.mplot3d import Axes3D
 from enum import Enum
 
@@ -71,7 +71,6 @@ def directKinematics(lengths, thetas):
     plot_3d_lines(ax, x, y, z)
     plt.pause(5)
     clear_3d_axes(ax)
-
 
 class ServoOrientarion(Enum):
     horizontal = 1
