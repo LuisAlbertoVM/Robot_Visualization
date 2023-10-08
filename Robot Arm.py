@@ -1,5 +1,6 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import time
 from mpl_toolkits.mplot3d import Axes3D
 from enum import Enum
 
@@ -58,9 +59,18 @@ def directKinematics(lengths, thetas):
     final_position_servo_5    = translation_z(point=rotation_y(initital_position_servo_5,theta_5), z=length_5)
     initital_position_servo_6 = final_position_servo_5
     final_position_servo_6    = translation_z(point=rotation_z(initital_position_servo_6,theta_6), z=length_6)
-    print(theta_1)
-    print(final_position_servo_6.x, final_position_servo_6.y, final_position_servo_6.z)
 
+    x = [initital_position_servo_1.x, final_position_servo_1.x, final_position_servo_2.x, final_position_servo_3.x, final_position_servo_4.x, final_position_servo_5.x, final_position_servo_6.x]
+    y = [initital_position_servo_1.y, final_position_servo_1.y, final_position_servo_2.y, final_position_servo_3.y, final_position_servo_4.y, final_position_servo_5.y, final_position_servo_6.y]
+    z = [initital_position_servo_1.z, final_position_servo_1.z, final_position_servo_2.z, final_position_servo_3.z, final_position_servo_4.z, final_position_servo_5.z, final_position_servo_6.z]
+    ax = create_3d_axes()
+    plot_3d_lines(ax, x, y, z)
+    plt.pause(5)
+    clear_3d_axes(ax)
+    plt.pause(5)
+    plot_3d_lines(ax, x, y, z)
+    plt.pause(5)
+    clear_3d_axes(ax)
 
 
 class ServoOrientarion(Enum):
@@ -164,17 +174,19 @@ def translation_z(point, z):
     result_matrix[3, 3] = point.matrix[3, 3] + point.matrix[3, 2] * z
     return Point(matrix=result_matrix)
 
-def plot_3d_links_arm(x, y, z):
+def create_3d_axes():
     fig = plt.figure()
     ax = fig.add_subplot(111, projection='3d')
-
-    ax.scatter(x, y, z, c='b', marker='o')
-    
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
+    return ax
 
-    ax.scatter()
+def plot_3d_lines(ax,x,y,z):
+    ax.plot(x, y, z, c='b',marker='o')
+
+def clear_3d_axes(ax):
+    ax.clear()
 
 if __name__ == '__main__':
     run()
