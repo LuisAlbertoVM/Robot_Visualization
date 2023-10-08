@@ -15,9 +15,10 @@ $length_6  = 61$
 
 The initial point of the first servo is:  
 
-\begin{bmatrix}
-1 & 0 & 0 & x \\
-0 & 1 & 0 & y \\
-0 & 0 & 1 & z \\
-0 & 0 & 0 & 1
-\end{bmatrix}
+$$
+\begin{matrix}
+1 & 2 & 3 \\
+4 & 5 & 6 \\
+7 & 8 & 9
+\end{matrix}
+$$
