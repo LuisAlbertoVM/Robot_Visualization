@@ -6,9 +6,19 @@ To start we define the initial point $x=0$, $y=0$, $z=0$
 
 To start making the calculous we need to define the caracteristics of the joints in the robot arm, for this we are going to use servos RDS51150, to simplify the draft we use:
 
-$length1  = 62$  
-$length2  = 93$  
-$length3  = 93$  
-$length4  = 62$  
-$length5  = 93$  
-$length6  = 61$  
+$length_1  = 62$  
+$length_2  = 93$  
+$length_3  = 93$  
+$length_4  = 62$  
+$length_5  = 93$  
+$length_6  = 61$  
+
+The initial point of the first servo is:
+$$
+\begin{matrix}
+1 & 0 & 0 & x\\
+0 & 1 & 0 & y\\
+0 & 0 & 1 & z\\
+0 & 0 & 0 & 1
+\end{matrix}
+$$
