@@ -77,17 +77,17 @@ Observe that the we can improve the matrix multiplication making this multiplica
 
 $$
 \begin{bmatrix}
-1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
+a_00 & a_01 & a_02 & a_03 \\
+a_10 & a_11 & a_12 & a_13 \\
+a_20 & a_21 & a_22 & a_23 \\
+a_30 & a_31 & a_32 & a_33
 \end{bmatrix}
 x
 \begin{bmatrix}
-1 & 0 & 0 & 0 \\
-0 & 1 & 0 & 0 \\
-0 & 0 & 1 & 0 \\
-0 & 0 & 0 & 1
+b_00 & b_01 & b_02 & b_03 \\
+b_10 & b_11 & b_12 & b_13 \\
+b_20 & b_21 & b_22 & b_23 \\
+b_30 & b_31 & b_32 & b_33
 \end{bmatrix}
 $$
 $$
