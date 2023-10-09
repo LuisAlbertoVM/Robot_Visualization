@@ -101,6 +101,7 @@ $$
 Where $C$ is:
 
 $$
+
 c_{00} = a_{00} b_{00}
 
 c_{01} = 
@@ -132,6 +133,7 @@ c_{31} =
 c_{32} = 
 
 c_{33} = 
+
 $$
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
