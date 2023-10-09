@@ -2,8 +2,6 @@
 
 This is the explication of how to draft a 6 DOF Robot Arm
 
-To start we define the initial point $x=0$, $y=0$, $z=0$
-
 To start making the calculous we need to define the caracteristics of the joints in the robot arm, for this we are going to use servos RDS51150, to simplify the draft we use:
 
 $length_1  = 62$  
@@ -75,7 +73,11 @@ sin(\theta) & cos(\theta) & 0 & 0 \\
 \end{bmatrix}
 $$
 
-The initial point of the first servo is:
+Observe that the we can improve the matrix multiplication making this multiplication:
+
+
+
+To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
 $$
 \begin{bmatrix}
