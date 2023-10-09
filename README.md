@@ -89,7 +89,6 @@ x
 0 & 0 & 1 & 0 \\
 0 & 0 & 0 & 1
 \end{bmatrix}
-
 $$
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
