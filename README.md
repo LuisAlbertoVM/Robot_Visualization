@@ -77,7 +77,7 @@ Observe that the we can improve the matrix multiplication making this multiplica
 
 $$
 \begin{bmatrix}
-a_0_0 & a_01 & a_02 & a_03 \\
+a_{00} & a_01 & a_02 & a_03 \\
 a_10 & a_11 & a_12 & a_13 \\
 a_20 & a_21 & a_22 & a_23 \\
 a_30 & a_31 & a_32 & a_33
