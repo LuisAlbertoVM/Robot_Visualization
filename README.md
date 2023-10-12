@@ -134,6 +134,8 @@ $$c_{33} = a_{30} b_{03} + a_{31} b_{13} + a_{32} b_{23} + a_{33} b_{33}$$
 
 As this is the solution of a multiplication of 2 4x4 Matrix, we save time not procesing the comon way to multiplicate 2 matrix that has 3 for
 
+The solution of translate a matrix A in x is:
+$A + A[:,3]*x$
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
