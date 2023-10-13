@@ -140,6 +140,12 @@ $C = A$
 
 $C[:,3] = A[:,3]*x$
 
+The solution of translate a matrix A in y is:
+
+$C = A$
+
+$C[:,3] = A[:,3]*y$
+
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
 $$
