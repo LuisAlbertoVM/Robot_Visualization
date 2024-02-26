@@ -93,9 +93,6 @@ class Servo:
         self.initial_point = initial_point
         self.servo_type = servo_type
         self.servo_orientation = servo_orientation
-
-        
-        
         pass
 
 def rotation_x(point, theta):
