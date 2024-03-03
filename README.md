@@ -4,12 +4,12 @@ This is the explication of how to draft a 6 DOF Robot Arm
 
 To start making the calculous we need to define the caracteristics of the joints in the robot arm, for this we are going to use servos RDS51150, to simplify the draft we use:
 
-$length_1  = 62$  
-$length_2  = 93$  
-$length_3  = 93$  
-$length_4  = 62$  
-$length_5  = 93$  
-$length_6  = 61$  
+$$length_1  = 62$$  
+$$length_2  = 93$$  
+$$length_3  = 93$$  
+$$length_4  = 62$$  
+$$length_5  = 93$$  
+$$length_6  = 61$$  
 
 The translations and rotations matrix are:
 
@@ -165,4 +165,8 @@ $$
 
 The final position of servo 1 is:
 
-$$InitialPositionServo_1 * translation_z * rotation_z$$
+$$Servo1_{Final Position} = Servo1_{Initial Position} * translation_z * rotation_z$$
+
+Teh initial position of servo 2 is the final position of servo 1:
+
+$$Servo2_{Initial Position} = Servo1_{Final Position}$$
