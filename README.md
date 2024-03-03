@@ -165,4 +165,4 @@ $$
 
 The final position of servo 1 is:
 
-$$InitialPositionServo_1 x translation_z x rotation_z$$
+$$InitialPositionServo_1 * translation_z * rotation_z$$
