@@ -332,7 +332,7 @@ $$D = -normal . point_1$$
 $$Distance = (a*point.x + b*point.y + c*point.z + d) -normal . point_1$$
 
 $$
-Distance = \frac{a \cdot \text{point.x} + b \cdot \text{point.y} + c \cdot \text{point.z} + d}{\sqrt{a^2 + b^2 + c^2}}
+Distance = \frac{a \cdot point_x + b \cdot point_y + c \cdot point_z + d}{\sqrt{a^2 + b^2 + c^2}}
 $$
 
 ```
