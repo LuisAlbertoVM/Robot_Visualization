@@ -11,7 +11,7 @@ def run():
     length4  = 62
     length5  = 93
     length6  = 61
-    initial_theta =  90
+    initial_theta =  0
     final_theta   =  91
 
     lengths = [length1, length2, length3, length4, length5, length6]
@@ -65,11 +65,10 @@ def directKinematics(lengths, thetas):
     z = [initital_position_servo_1.z, final_position_servo_1.z, final_position_servo_2.z, final_position_servo_3.z, final_position_servo_4.z, final_position_servo_5.z, final_position_servo_6.z]
     ax = create_3d_axes()
     plot_3d_lines(ax, x, y, z)
-    plt.pause(5)
-    clear_3d_axes(ax)
-    plt.pause(5)
-    plot_3d_lines(ax, x, y, z)
-    plt.pause(5)
+    plt.pause(1)
+    #clear_3d_axes(ax)
+    #plot_3d_lines(ax, x, y, z)
+    #plt.pause(1)
     clear_3d_axes(ax)
 
 class ServoOrientarion(Enum):
@@ -93,7 +92,6 @@ class Servo:
         self.initial_point = initial_point
         self.servo_type = servo_type
         self.servo_orientation = servo_orientation
-        pass
 
 def rotation_x(point, theta):
     cos_theta = np.cos(theta)
@@ -176,6 +174,9 @@ def create_3d_axes():
     ax.set_xlabel('X')
     ax.set_ylabel('Y')
     ax.set_zlabel('Z')
+    ax.set_xlim(-500, 500)
+    ax.set_ylim(-500, 500)
+    ax.set_zlim(-200, 200)
     return ax
 
 def plot_3d_lines(ax,x,y,z):

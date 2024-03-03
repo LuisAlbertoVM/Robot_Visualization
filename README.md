@@ -138,13 +138,19 @@ The solution of translate a matrix A in x is:
 
 $C = A$
 
-$C[:,3] = A[:,3]*x$
+$C[:,3] = A[:,3] + A[:,0]*x$
 
 The solution of translate a matrix A in y is:
 
 $C = A$
 
-$C[:,3] = A[:,3]*y$
+$C[:,3] = A[:,3] + A[:,1]*y$
+
+The solution of translate a matrix A in y is:
+
+$C = A$
+
+$C[:,3] = A[:,3] + A[:,2]*y$
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
