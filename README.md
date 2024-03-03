@@ -319,7 +319,7 @@ $$normal = vector_1 x vector 2$$
 $$plane = Ax + By + Cz + D = 0$$
 $$A = normal[0]$$
 $$B = normal[1]$$
-$$C = normal[2]
+$$C = normal[2]$$
 $$D = -normal . point_1$$
 
 ```
