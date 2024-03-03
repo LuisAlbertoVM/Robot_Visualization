@@ -136,21 +136,21 @@ As this is the solution of a multiplication of 2 4x4 Matrix, we save time not pr
 
 The solution of translate a matrix A in x is:
 
-$C = A$
+$$C = A$$
 
-$C[:,3] = A[:,3] + A[:,0]*x$
-
-The solution of translate a matrix A in y is:
-
-$C = A$
-
-$C[:,3] = A[:,3] + A[:,1]*y$
+$$C[:,3] = A[:,3] + A[:,0]*x$$
 
 The solution of translate a matrix A in y is:
 
+$$C = A$$
+
+$$C[:,3] = A[:,3] + A[:,1]*y$$
+
+The solution of translate a matrix A in z is:
+
 $C = A$
 
-$C[:,3] = A[:,3] + A[:,2]*y$
+$C[:,3] = A[:,3] + A[:,2]*z$
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
