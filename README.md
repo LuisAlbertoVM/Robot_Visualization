@@ -314,12 +314,19 @@ final_position_servo_6    = translation_z(point=rotation_z(initital_position_ser
 To check that a servo does not collide with another, an approximation check that no corner of the servo is inside another servo, so no corner of the servo will be between the 6 sides of the other servos, for this we create a plane for each of the faces and calculate the distance from each corner of the servo to each of the planes resulting in that the distance between the servo corner is greater than the height, width and length of the servo in any of the 6 planes.
 
 $$vector_1 = point_2 - point_1$$
+
 $$vector_2 = point_3 - point_1$$
+
 $$normal = vector_1 x vector 2$$
+
 $$plane = Ax + By + Cz + D = 0$$
+
 $$A = normal[0]$$
+
 $$B = normal[1]$$
+
 $$C = normal[2]$$
+
 $$D = -normal . point_1$$
 
 ```
