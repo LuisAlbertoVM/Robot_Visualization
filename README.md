@@ -294,7 +294,7 @@ $$Servo5_{Final Position} = Servo5_{InitialPosition} * rotation_y(\theta_5) * tr
 
 $$Servo6_{Initial Position} = Servo5_{Final Position}$$
 
-$$Servo6_{Final Position} = Servo6_{InitialPosition} * rotation_z(\theta_6) * translation_y(length_6)$$
+$$Servo6_{Final Position} = Servo6_{InitialPosition} * rotation_z(\theta_6) * translation_z(length_6)$$
 
 ```
 initital_position_servo_1 = Point(initial_matrix_servo_1)
