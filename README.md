@@ -178,12 +178,21 @@ $$Servo2_{Initial Position} = Servo1_{Final Position}$$
 
 The final position of servo 2 is:
 
-$$Servo2_{Initial Position} = Servo2_{InitialPosition} * rotation_y * translation_z$$
+$$Servo2_{Initial Position} = Servo2_{InitialPosition} * rotation_y(\theta_2) * translation_z(length_2)$$
 
-Thte initial position of servo 3 is the final position of servo 2:
+The initial position of servo 3 is the final position of servo 2:
 
 $$Servo3_{Initial Position} = Servo2_{Final Position}$$
 
 The final position of servo 3 is:
 
-$$Servo3_{Initial Position} = Servo3_{InitialPosition} * rotation_y * translation_z$$
+$$Servo3_{Initial Position} = Servo3_{InitialPosition} * rotation_y(\theta_3) * translation_z(length_3)$$
+
+The initial position of servo 4 is the final position of servo 3:
+
+$$Servo4_{Initial Position} = Servo3_{Final Position}$$
+
+The final position of servo 4 is:
+
+$$Servo4_{Initial Position} = Servo4_{InitialPosition} * rotation_z(\theta_4) * translation_z(length_4)$$
+
