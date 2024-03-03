@@ -153,14 +153,11 @@ The solution of translate a matrix A in x is:
 $$C = A$$
 
 $$C[:,3] = A[:,3] + A[:,0]*x$$
+
 ```
 def translation_x(point, x):
     result_matrix = np.copy(point.matrix)
     result_matrix[:, 3] += result_matrix[:, 0] * x
-    #result_matrix[0,3] = result_matrix[0,3] + result_matrix[0,0] * x
-    #result_matrix[1,3] = result_matrix[1,3] + result_matrix[1,0] * x
-    #result_matrix[2,3] = result_matrix[2,3] + result_matrix[2,0] * x
-    #result_matrix[3,3] = result_matrix[3,3] + result_matrix[3,0] * x
     return Point(matrix=result_matrix)
 ```
 
@@ -170,11 +167,25 @@ $$C = A$$
 
 $$C[:,3] = A[:,3] + A[:,1]*y$$
 
+```
+def translation_y(point, y):
+    result_matrix = np.copy(point.matrix)
+    result_matrix[:, 3] += result_matrix[:, 1] * y
+    return Point(matrix=result_matrix)
+```
+
 The solution of translate a matrix A in z is:
 
 $$C = A$$
 
 $$C[:,3] = A[:,3] + A[:,2]*z$$
+
+```
+def translation_z(point, z):
+    result_matrix = np.copy(point.matrix)
+    result_matrix[:, 3] += result_matrix[:, 2] * z
+    return Point(matrix=result_matrix)
+```
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
