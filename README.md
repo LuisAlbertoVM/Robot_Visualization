@@ -272,46 +272,26 @@ initial_matrix_servo_1 = np.array([
 ])
 ```
 
-The final position of servo 1 is:
+The initial and final positions of the servos are:
 
 $$Servo1_{Final Position} = Servo1_{Initial Position} * translation_z(length_1) * rotation_z(\theta_1)$$
 
-The initial position of servo 2 is the final position of servo 1:
-
 $$Servo2_{Initial Position} = Servo1_{Final Position}$$
-
-The final position of servo 2 is:
 
 $$Servo2_{Final Position} = Servo2_{InitialPosition} * rotation_y(\theta_2) * translation_z(length_2)$$
 
-The initial position of servo 3 is the final position of servo 2:
-
 $$Servo3_{Initial Position} = Servo2_{Final Position}$$
-
-The final position of servo 3 is:
 
 $$Servo3_{Final Position} = Servo3_{InitialPosition} * rotation_y(\theta_3) * translation_z(length_3)$$
 
-The initial position of servo 4 is the final position of servo 3:
-
 $$Servo4_{Initial Position} = Servo3_{Final Position}$$
-
-The final position of servo 4 is:
 
 $$Servo4_{Final Position} = Servo4_{InitialPosition} * rotation_z(\theta_4) * translation_z(length_4)$$
 
-The initial position of servo 5 is the final position of servo 4:
-
 $$Servo5_{Initial Position} = Servo4_{Final Position}$$
-
-The final position of servo 5 is:
 
 $$Servo5_{Final Position} = Servo5_{InitialPosition} * rotation_y(\theta_5) * translation_z(length_5)$$
 
-The initial position of servo 6 is the final position of servo 5:
-
 $$Servo6_{Initial Position} = Servo5_{Final Position}$$
-
-The final position of servo 6 is:
 
 $$Servo6_{Final Position} = Servo6_{InitialPosition} * rotation_z(\theta_6) * translation_y(length_6)$$
