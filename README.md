@@ -4,8 +4,9 @@ This is the explication of how to draft a 6 DOF Robot Arm
 
 To start making the calculous we need to define the caracteristics of the joints in the robot arm, for this we are going to use servos RDS51150, to simplify the draft we use:
 
-$$length_1  = 62
-length_2  = 93$$  
+$$length_1  = 62$$
+  
+$$length_2  = 93$$  
 
 $$length_3  = 93$$  
 
