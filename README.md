@@ -148,9 +148,9 @@ $$C[:,3] = A[:,3] + A[:,1]*y$$
 
 The solution of translate a matrix A in z is:
 
-$C = A$
+$$C = A$$
 
-$C[:,3] = A[:,3] + A[:,2]*z$
+$$C[:,3] = A[:,3] + A[:,2]*z$$
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
