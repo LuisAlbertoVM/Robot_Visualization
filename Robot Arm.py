@@ -11,7 +11,7 @@ def run():
     length4  = 62
     length5  = 93
     length6  = 61
-    initial_theta =  0
+    initial_theta =  90
     final_theta   =  91
 
     lengths = [length1, length2, length3, length4, length5, length6]
@@ -65,7 +65,7 @@ def directKinematics(lengths, thetas):
     z = [initital_position_servo_1.z, final_position_servo_1.z, final_position_servo_2.z, final_position_servo_3.z, final_position_servo_4.z, final_position_servo_5.z, final_position_servo_6.z]
     ax = create_3d_axes()
     plot_3d_lines(ax, x, y, z)
-    plt.pause(1)
+    plt.pause(5)
     #clear_3d_axes(ax)
     #plot_3d_lines(ax, x, y, z)
     #plt.pause(1)
@@ -146,26 +146,29 @@ def rotation_z(point, theta):
 
 def translation_x(point, x):
     result_matrix = np.copy(point.matrix)
-    result_matrix[0,3] = result_matrix[0,3] + result_matrix[0,0] * x
-    result_matrix[1,3] = result_matrix[1,3] + result_matrix[1,0] * x
-    result_matrix[2,3] = result_matrix[2,3] + result_matrix[2,0] * x
-    result_matrix[3,3] = result_matrix[3,3] + result_matrix[3,0] * x
+    result_matrix[:, 3] += result_matrix[:, 0] * x
+    #result_matrix[0,3] = result_matrix[0,3] + result_matrix[0,0] * x
+    #result_matrix[1,3] = result_matrix[1,3] + result_matrix[1,0] * x
+    #result_matrix[2,3] = result_matrix[2,3] + result_matrix[2,0] * x
+    #result_matrix[3,3] = result_matrix[3,3] + result_matrix[3,0] * x
     return Point(matrix=result_matrix)
 
 def translation_y(point, y):
     result_matrix = np.copy(point.matrix)
-    result_matrix[0,3] = result_matrix[0,3] + result_matrix[0,1] * y
-    result_matrix[1,3] = result_matrix[1,3] + result_matrix[1,1] * y
-    result_matrix[2,3] = result_matrix[2,3] + result_matrix[2,1] * y
-    result_matrix[3,3] = result_matrix[3,3] + result_matrix[3,1] * y
+    result_matrix[:, 3] += result_matrix[:, 1] * y
+    #result_matrix[0,3] = result_matrix[0,3] + result_matrix[0,1] * y
+    #result_matrix[1,3] = result_matrix[1,3] + result_matrix[1,1] * y
+    #result_matrix[2,3] = result_matrix[2,3] + result_matrix[2,1] * y
+    #result_matrix[3,3] = result_matrix[3,3] + result_matrix[3,1] * y
     return Point(matrix=result_matrix)
 
 def translation_z(point, z):
     result_matrix = np.copy(point.matrix)
-    result_matrix[0, 3] = point.matrix[0, 3] + point.matrix[0, 2] * z
-    result_matrix[1, 3] = point.matrix[1, 3] + point.matrix[1, 2] * z
-    result_matrix[2, 3] = point.matrix[2, 3] + point.matrix[2, 2] * z
-    result_matrix[3, 3] = point.matrix[3, 3] + point.matrix[3, 2] * z
+    result_matrix[:, 3] += result_matrix[:, 2] * z
+    #result_matrix[0, 3] = point.matrix[0, 3] + point.matrix[0, 2] * z
+    #result_matrix[1, 3] = point.matrix[1, 3] + point.matrix[1, 2] * z
+    #result_matrix[2, 3] = point.matrix[2, 3] + point.matrix[2, 2] * z
+    #result_matrix[3, 3] = point.matrix[3, 3] + point.matrix[3, 2] * z
     return Point(matrix=result_matrix)
 
 def create_3d_axes():

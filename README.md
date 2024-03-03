@@ -37,6 +37,17 @@ translation_x =
 \end{bmatrix}
 $$
 
+```
+def translation_x(point, x):
+    result_matrix = np.copy(point.matrix)
+    result_matrix[:, 3] += result_matrix[:, 0] * x
+    #result_matrix[0,3] = result_matrix[0,3] + result_matrix[0,0] * x
+    #result_matrix[1,3] = result_matrix[1,3] + result_matrix[1,0] * x
+    #result_matrix[2,3] = result_matrix[2,3] + result_matrix[2,0] * x
+    #result_matrix[3,3] = result_matrix[3,3] + result_matrix[3,0] * x
+    return Point(matrix=result_matrix)
+```
+
 $$
 translation_y = 
 \begin{bmatrix}
