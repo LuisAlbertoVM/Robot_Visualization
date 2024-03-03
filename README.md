@@ -162,3 +162,7 @@ $$
 0 & 0 & 0 & 1
 \end{bmatrix}
 $$
+
+The final position of servo 1 is:
+
+$$initial_position_servo_1 x translation_z x rotation_z$$
