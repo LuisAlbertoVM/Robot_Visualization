@@ -244,6 +244,16 @@ def rotation_z(point, theta):
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
+```
+class Point:
+    def __init__(self, matrix):
+        # Initialize the point
+        self.matrix = matrix
+        self.x = self.matrix[0][3]
+        self.y = self.matrix[1][3]
+        self.z = self.matrix[2][3]
+```
+
 $$
 \begin{bmatrix}
 1 & 0 & 0 & 0 \\
