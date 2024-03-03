@@ -346,5 +346,5 @@ class Plane:
 
 To calculate de distance from one point to a plane:
 
-$$Distance_{PointToPlane} = abs(a*point.x + b*point.y + c*point.z + d) / (sqrt(a^2+b^2+c^2))$$
+$$Distance_{PointToPlane} = abs(a*point.x + b*point.y + c*point.z + d)$$
 
