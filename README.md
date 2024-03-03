@@ -16,6 +16,15 @@ $$length_5  = 93$$
 
 $$length_6  = 61$$  
 
+'''
+length1  = 62
+length2  = 93
+length3  = 93
+length4  = 62
+length5  = 93
+length6  = 61
+'''
+
 The translations and rotations matrix are:
 
 $$
