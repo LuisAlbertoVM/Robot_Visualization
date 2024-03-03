@@ -317,7 +317,7 @@ $$vector_1 = point_2 - point_1$$
 
 $$vector_2 = point_3 - point_1$$
 
-$$normal = vector_1 x vector 2$$
+$$normal = vector_1 * vector 2$$
 
 $$plane = Ax + By + Cz + D = 0$$
 
@@ -343,3 +343,8 @@ class Plane:
         self.c = normal[2]
         self.d = -(normal[0] * point_a.x) - (normal[1]*point_a.y) - (normal[2]*point_a.z)
 ```
+
+To calculate de distance from one point to a plane:
+
+$$Distance_{PointToPlane} = abs(a*point.x + b*point.y + c*point.z + d)/sqrt(a^2+b^2+c^2)$$
+
