@@ -263,6 +263,15 @@ $$
 \end{bmatrix}
 $$
 
+```
+initial_matrix_servo_1 = np.array([
+    [1, 0, 0, 0],
+    [0, 1, 0, 0],
+    [0, 0, 1, 0],
+    [0, 0, 0, 1]
+])
+```
+
 The final position of servo 1 is:
 
 $$Servo1_{Final Position} = Servo1_{Initial Position} * translation_z(length_1) * rotation_z(\theta_1)$$
