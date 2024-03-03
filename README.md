@@ -329,6 +329,8 @@ $$C = normal[2]$$
 
 $$D = -normal . point_1$$
 
+$$Distance = |a*point.x + b*point.y + c*point.z + d| / (sqrt(a^2+b^2+c^2))$$
+
 ```
 class Plane:
     def __init__(self, point_a, point_b, point_c):
@@ -346,5 +348,5 @@ class Plane:
 
 To calculate de distance from one point to a plane:
 
-$Distance = a*point.x + b*point.y + c*point.z + d$
+
 
