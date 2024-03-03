@@ -310,3 +310,29 @@ final_position_servo_5    = translation_z(point=rotation_y(initital_position_ser
 initital_position_servo_6 = final_position_servo_5
 final_position_servo_6    = translation_z(point=rotation_z(initital_position_servo_6,theta_6), z=length_6)
 ```
+
+To check that a servo does not collide with another, an approximation check that no corner of the servo is inside another servo, so no corner of the servo will be between the 6 sides of the other servos, for this we create a plane for each of the faces and calculate the distance from each corner of the servo to each of the planes resulting in that the distance between the servo corner is greater than the height, width and length of the servo in any of the 6 planes.
+
+$$vector_1 = point_2 - point_1$$
+$$vector_2 = point_3 - point_1$$
+$$normal = vector_1 x vector 2$$
+$$plane = Ax + By + Cz + D = 0$$
+$$A = normal[0]$$
+$$B = normal[1]$$
+$$C = normal[2]
+$$D = -normal . point_1$$
+
+```
+class Plane:
+    def __init__(self, point_a, point_b, point_c):
+        self.point_a = point_a
+        self.point_b = point_b
+        self.point_c = point_c
+        vector_1 = [point_b.x - point_a.x, point_b.y - point_a.y, point_b.z - point_a.z]
+        vector_2 = [point_c.x - point_c.x, point_b.y - point_c.y, point_c.z - point_a.z]
+        normal = [vector_1[1]*vector_2[2]-vector_1[2]*vector_2[1], vector_1[2]*vector_2[0]-vector_1[0]*vector_2[2], vector_1[0]*vector_2[1]-vector_1[1]*vector_2[0]]
+        self.a = normal[0]
+        self.b = normal[1]
+        self.c = normal[2]
+        self.d = -(normal[0] * point_a.x) - (normal[1]*point_a.y) - (normal[2]*point_a.z)
+```

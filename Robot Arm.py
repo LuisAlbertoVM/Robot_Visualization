@@ -87,6 +87,19 @@ class Point:
         self.y = self.matrix[1][3]
         self.z = self.matrix[2][3]
 
+class Plane:
+    def __init__(self, point_a, point_b, point_c):
+        self.point_a = point_a
+        self.point_b = point_b
+        self.point_c = point_c
+        vector_1 = [point_b.x - point_a.x, point_b.y - point_a.y, point_b.z - point_a.z]
+        vector_2 = [point_c.x - point_c.x, point_b.y - point_c.y, point_c.z - point_a.z]
+        normal = [vector_1[1]*vector_2[2]-vector_1[2]*vector_2[1], vector_1[2]*vector_2[0]-vector_1[0]*vector_2[2], vector_1[0]*vector_2[1]-vector_1[1]*vector_2[0]]
+        self.a = normal[0]
+        self.b = normal[1]
+        self.c = normal[2]
+        self.d = -(normal[0] * point_a.x) - (normal[1]*point_a.y) - (normal[2]*point_a.z)
+
 class Servo:
     def __init__(self,initial_point,servo_type,servo_orientation):
         self.initial_point = initial_point
