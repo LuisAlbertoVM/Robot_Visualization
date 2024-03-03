@@ -11,7 +11,7 @@ def run():
     length4  = 62
     length5  = 93
     length6  = 61
-    initial_theta =  90
+    initial_theta =  45
     final_theta   =  91
 
     lengths = [length1, length2, length3, length4, length5, length6]

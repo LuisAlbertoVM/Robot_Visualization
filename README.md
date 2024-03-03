@@ -295,3 +295,18 @@ $$Servo5_{Final Position} = Servo5_{InitialPosition} * rotation_y(\theta_5) * tr
 $$Servo6_{Initial Position} = Servo5_{Final Position}$$
 
 $$Servo6_{Final Position} = Servo6_{InitialPosition} * rotation_z(\theta_6) * translation_y(length_6)$$
+
+```
+initital_position_servo_1 = Point(initial_matrix_servo_1)
+final_position_servo_1    = translation_z(point=rotation_z(initital_position_servo_1,theta_1), z=length_1)
+initital_position_servo_2 = final_position_servo_1
+final_position_servo_2    = translation_z(point=rotation_y(initital_position_servo_2,theta_2), z=length_2)
+initital_position_servo_3 = final_position_servo_2
+final_position_servo_3    = translation_z(point=rotation_y(initital_position_servo_3,theta_3), z=length_3)
+initital_position_servo_4 = final_position_servo_3
+final_position_servo_4    = translation_z(point=rotation_z(initital_position_servo_4,theta_4), z=length_4)
+initital_position_servo_5 = final_position_servo_4
+final_position_servo_5    = translation_z(point=rotation_y(initital_position_servo_5,theta_5), z=length_5)
+initital_position_servo_6 = final_position_servo_5
+final_position_servo_6    = translation_z(point=rotation_z(initital_position_servo_6,theta_6), z=length_6)
+```
