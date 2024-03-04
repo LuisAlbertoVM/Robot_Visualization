@@ -329,12 +329,6 @@ $$C = normal[2]$$
 
 $$D = -normal . point_1$$
 
-$$Distance = (a*point.x + b*point.y + c*point.z + d) -normal . point_1$$
-
-$$
-Distance = \frac{a \cdot point_x + b \cdot point_y + c \cdot point_z + d}{\sqrt{a^2 + b^2 + c^2}}
-$$
-
 ```
 class Plane:
     def __init__(self, point_a, point_b, point_c):
@@ -352,5 +346,5 @@ class Plane:
 
 To calculate de distance from one point to a plane:
 
-
+$$Distance = \frac{plane_a \cdot point_x + plane_b \cdot point_y + plane_c \cdot point_z + plane_d}{\sqrt{a^2 + b^2 + c^2}}$$
 
