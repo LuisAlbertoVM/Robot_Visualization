@@ -354,4 +354,69 @@ def distance_from_point_to_plane(point, plane):
 
 To know if a point is inside a servo:
 
+```python
+def translate_point_in_x_y_z(initial_point, x, y, z):
+    translation_z(translation_y(translation_x(initial_point,x),y),z)
 
+```
+
+
+```python
+class Servo:
+    def __init__(self,initial_point,servo_type,servo_orientation):
+        self.initial_point = initial_point
+        self.servo_type = servo_type
+        self.servo_orientation = servo_orientation
+
+        if self.servo_type == "RDS51150":
+            self.width = 65
+            self.heigth = 48
+            self.depth = 30
+        elif servo_type == "RDS3225":
+            self.width = 65
+            self.heigth = 48
+            self.depth = 30
+
+        if self.servo_orientation == "":
+            pass
+        elif "vertical":
+            provisional_width = self.width
+            provisional_heigth = self.heigth
+            provisional_depth = self.depth
+            self.width = provisional_heigth
+            self.heigth = provisional_width
+            self.depth = provisional_depth
+        
+        self.point_1 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, 7)
+        self.point_2 = translate_point_in_x_y_z(initial_point,  self.width-(15/65) * self.width, self.depth/2, 7)
+        self.point_3 = translate_point_in_x_y_z(initial_point, -self.width-(15/65) * self.width, self.depth/2, 7)
+        self.point_4 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, 7)
+        self.point_5 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, self.heigth+7)
+        self.point_6 = translate_point_in_x_y_z(initial_point,  self.width-(15/65) * self.width, self.depth/2, self.heigth+7)
+        self.point_7 = translate_point_in_x_y_z(initial_point, -self.width-(15/65) * self.width, self.depth/2, self.heigth+7)
+        self.point_8 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, self.heigth+7)
+        
+        self.plane_down     = Plane(self.point_1, self.point_2, self.point_4)
+        self.plane_up       = Plane(self.point_5, self.point_6, self.point_8)
+        self.plane_forward  = Plane(self.point_1, self.point_2, self.point_5)
+        self.plane_backward = Plane(self.point_4, self.point_3, self.point_8)
+        self.plane_left     = Plane(self.point_1, self.point_5, self.point_4)
+        self.plane_rigth    = Plane(self.point_3, self.point_2, self.point_7)
+```
+
+```python
+def is_point_inside_servo(point, servo):
+    
+    distance_base     = distance_from_point_to_plane(point, servo.plane_down)
+    distance_top      = distance_from_point_to_plane(point, servo.plane_up)
+    distance_forward  = distance_from_point_to_plane(point, servo.plane_forward)
+    distance_backward = distance_from_point_to_plane(point, servo.plane_backward)
+    distance_left     = distance_from_point_to_plane(point, servo.plane_left)
+    distance_rigth    = distance_from_point_to_plane(point, servo.plane_rigth)
+
+    is_between_base_top         = distance_base <= servo.heigth    and distance_top     <= servo.heigth
+    is_between_backward_forward = distance_backward <= servo.depth and distance_forward <= servo.depth
+    is_between_left_rigth       = distance_left     <= servo.width and distance_rigth   <= servo.width
+
+    return is_between_base_top and is_between_backward_forward and is_between_left_rigth
+```

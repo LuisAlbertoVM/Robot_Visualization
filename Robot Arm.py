@@ -148,6 +148,21 @@ class Servo:
         self.plane_left     = Plane(self.point_1, self.point_5, self.point_4)
         self.plane_rigth    = Plane(self.point_3, self.point_2, self.point_7)
 
+def is_point_inside_servo(point, servo):
+    
+    distance_base     = distance_from_point_to_plane(point, servo.plane_down)
+    distance_top      = distance_from_point_to_plane(point, servo.plane_up)
+    distance_forward  = distance_from_point_to_plane(point, servo.plane_forward)
+    distance_backward = distance_from_point_to_plane(point, servo.plane_backward)
+    distance_left     = distance_from_point_to_plane(point, servo.plane_left)
+    distance_rigth    = distance_from_point_to_plane(point, servo.plane_rigth)
+
+    is_between_base_top         = distance_base <= servo.heigth    and distance_top     <= servo.heigth
+    is_between_backward_forward = distance_backward <= servo.depth and distance_forward <= servo.depth
+    is_between_left_rigth       = distance_left     <= servo.width and distance_rigth   <= servo.width
+
+    return is_between_base_top and is_between_backward_forward and is_between_left_rigth
+
 def rotation_x(point, theta):
     cos_theta = np.cos(theta)
     sin_theta = np.sin(theta)
