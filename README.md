@@ -247,7 +247,6 @@ To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point o
 ```python
 class Point:
     def __init__(self, matrix):
-        # Initialize the point
         self.matrix = matrix
         self.x = self.matrix[0][3]
         self.y = self.matrix[1][3]
@@ -352,3 +351,7 @@ $$Distance = \frac{a \cdot x + b \cdot y + c \cdot z + d}{\sqrt{a^2 + b^2 + c^2}
 def distance_from_point_to_plane(point, plane):
     return abs(plane.a*point.x + plane.b*point.y + plane.c*point.z + plane.d)/math.sqrt(plane.a ** 2 + plane.b ** 2 + plane.c ** 2)
 ```
+
+To know if a point is inside a servo:
+
+
