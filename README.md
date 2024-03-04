@@ -16,7 +16,7 @@ $$length_5  = 93$$
 
 $$length_6  = 61$$  
 
-```
+```python
 length1  = 62
 length2  = 93
 length3  = 93
@@ -154,7 +154,7 @@ $$C = A$$
 
 $$C[:,3] = A[:,3] + A[:,0]*x$$
 
-```
+```python
 def translation_x(point, x):
     result_matrix = np.copy(point.matrix)
     result_matrix[:, 3] += result_matrix[:, 0] * x
@@ -167,7 +167,7 @@ $$C = A$$
 
 $$C[:,3] = A[:,3] + A[:,1]*y$$
 
-```
+```python
 def translation_y(point, y):
     result_matrix = np.copy(point.matrix)
     result_matrix[:, 3] += result_matrix[:, 1] * y
@@ -180,7 +180,7 @@ $$C = A$$
 
 $$C[:,3] = A[:,3] + A[:,2]*z$$
 
-```
+```python
 def translation_z(point, z):
     result_matrix = np.copy(point.matrix)
     result_matrix[:, 3] += result_matrix[:, 2] * z
@@ -189,7 +189,7 @@ def translation_z(point, z):
 
 The rotation functions are:
 
-```
+```python
 def rotation_x(point, theta):
     cos_theta = np.cos(theta)
     sin_theta = np.sin(theta)
@@ -244,7 +244,7 @@ def rotation_z(point, theta):
 
 To start we define the initial point $x=0$, $y=0$, $z=0$ and the initial point of the first servo is:
 
-```
+```python
 class Point:
     def __init__(self, matrix):
         # Initialize the point
@@ -263,7 +263,7 @@ $$
 \end{bmatrix}
 $$
 
-```
+```python
 initial_matrix_servo_1 = np.array([
     [1, 0, 0, 0],
     [0, 1, 0, 0],
@@ -296,7 +296,7 @@ $$Servo6_{Initial Position} = Servo5_{Final Position}$$
 
 $$Servo6_{Final Position} = Servo6_{InitialPosition} * rotation_z(\theta_6) * translation_z(length_6)$$
 
-```
+```python
 initital_position_servo_1 = Point(initial_matrix_servo_1)
 final_position_servo_1    = translation_z(point=rotation_z(initital_position_servo_1,theta_1), z=length_1)
 initital_position_servo_2 = final_position_servo_1
@@ -329,7 +329,7 @@ $$C = normal[2]$$
 
 $$D = -normal . point_1$$
 
-```
+```python
 class Plane:
     def __init__(self, point_a, point_b, point_c):
         self.point_a = point_a
