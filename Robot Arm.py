@@ -163,6 +163,18 @@ def is_point_inside_servo(point, servo):
 
     return is_between_base_top and is_between_backward_forward and is_between_left_rigth
 
+def is_two_servo_collision(servo_1, servo_2):
+    is_point_1_inside_servo_2 = is_point_inside_servo(servo_1.point_1, servo_2)
+    is_point_2_inside_servo_2 = is_point_inside_servo(servo_1.point_2, servo_2)
+    is_point_3_inside_servo_2 = is_point_inside_servo(servo_1.point_3, servo_2)
+    is_point_4_inside_servo_2 = is_point_inside_servo(servo_1.point_4, servo_2)
+    is_point_5_inside_servo_2 = is_point_inside_servo(servo_1.point_5, servo_2)
+    is_point_6_inside_servo_2 = is_point_inside_servo(servo_1.point_6, servo_2)
+    is_point_7_inside_servo_2 = is_point_inside_servo(servo_1.point_7, servo_2)
+    is_point_8_inside_servo_2 = is_point_inside_servo(servo_1.point_8, servo_2)
+
+    return is_point_1_inside_servo_2 or is_point_2_inside_servo_2 or is_point_3_inside_servo_2 or is_point_4_inside_servo_2 or is_point_5_inside_servo_2 or is_point_6_inside_servo_2 or is_point_7_inside_servo_2 or is_point_8_inside_servo_2
+
 def rotation_x(point, theta):
     cos_theta = np.cos(theta)
     sin_theta = np.sin(theta)
