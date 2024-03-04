@@ -346,5 +346,5 @@ class Plane:
 
 To calculate de distance from one point to a plane:
 
-$$Distance = \frac{plane_a \cdot point_x + plane_b \cdot point_y + plane_c \cdot point_z + plane_d}{\sqrt{a^2 + b^2 + c^2}}$$
+$$Distance = \frac{a \cdot x + b \cdot y + c \cdot z + d}{\sqrt{a^2 + b^2 + c^2}}$$
 
