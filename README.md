@@ -348,3 +348,7 @@ To calculate de distance from one point to a plane:
 
 $$Distance = \frac{a \cdot x + b \cdot y + c \cdot z + d}{\sqrt{a^2 + b^2 + c^2}}$$
 
+```python
+def distance_from_point_to_plane(point, plane):
+    return abs(plane.a*point.x + plane.b*point.y + plane.c*point.z + plane.d)/math.sqrt(plane.a ** 2 + plane.b ** 2 + plane.c ** 2)
+```

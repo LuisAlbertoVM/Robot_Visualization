@@ -1,4 +1,5 @@
 import time
+import math
 import numpy as np
 import matplotlib.pyplot as plt
 from mpl_toolkits.mplot3d import Axes3D
@@ -99,6 +100,9 @@ class Plane:
         self.b = normal[1]
         self.c = normal[2]
         self.d = -(normal[0] * point_a.x) - (normal[1]*point_a.y) - (normal[2]*point_a.z)
+
+def distance_from_point_to_plane(point, plane):
+    return abs(plane.a*point.x + plane.b*point.y + plane.c*point.z + plane.d)/math.sqrt(plane.a ** 2 + plane.b ** 2 + plane.c ** 2)
 
 class Servo:
     def __init__(self,initial_point,servo_type,servo_orientation):
