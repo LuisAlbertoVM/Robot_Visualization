@@ -132,14 +132,14 @@ class Servo:
             self.heigth = provisional_width
             self.depth = provisional_depth
         
-        self.point_1 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, 7)
-        self.point_2 = translate_point_in_x_y_z(initial_point,  self.width-(15/65) * self.width, self.depth/2, 7)
-        self.point_3 = translate_point_in_x_y_z(initial_point, -self.width-(15/65) * self.width, self.depth/2, 7)
-        self.point_4 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, 7)
-        self.point_5 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, self.heigth+7)
-        self.point_6 = translate_point_in_x_y_z(initial_point,  self.width-(15/65) * self.width, self.depth/2, self.heigth+7)
-        self.point_7 = translate_point_in_x_y_z(initial_point, -self.width-(15/65) * self.width, self.depth/2, self.heigth+7)
-        self.point_8 = translate_point_in_x_y_z(initial_point,            -(15/65) * self.width, self.depth/2, self.heigth+7)
+        self.point_1 = translate_point_in_x_y_z(initial_point,           -(15/65) * self.width,  self.depth/2, 7)
+        self.point_2 = translate_point_in_x_y_z(initial_point, self.width-(15/65) * self.width,  self.depth/2, 7)
+        self.point_3 = translate_point_in_x_y_z(initial_point, self.width-(15/65) * self.width, -self.depth/2, 7)
+        self.point_4 = translate_point_in_x_y_z(initial_point,           -(15/65) * self.width, -self.depth/2, 7)
+        self.point_5 = translate_point_in_x_y_z(initial_point,           -(15/65) * self.width,  self.depth/2, self.heigth+7)
+        self.point_6 = translate_point_in_x_y_z(initial_point, self.width-(15/65) * self.width,  self.depth/2, self.heigth+7)
+        self.point_7 = translate_point_in_x_y_z(initial_point, self.width-(15/65) * self.width, -self.depth/2, self.heigth+7)
+        self.point_8 = translate_point_in_x_y_z(initial_point,           -(15/65) * self.width, -self.depth/2, self.heigth+7)
         
         self.plane_down     = Plane(self.point_1, self.point_2, self.point_4)
         self.plane_up       = Plane(self.point_5, self.point_6, self.point_8)
